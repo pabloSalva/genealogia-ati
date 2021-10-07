@@ -27,7 +27,7 @@ const FilterPage = () => {
         : filterOptions
         ? `?${filterOptions}`
         : "";
-    console.log(url);
+    alert("La busqueda será: " + url);
   };
   return (
     <FilterTemplate
@@ -36,7 +36,6 @@ const FilterPage = () => {
         searchGeneral();
       }}
       handleFilterButton={() => {
-        console.log("ho");
         getFilterPath();
       }}
       handleOnChangeSearch={(event) => setSearchBarValue(event.target.value)}

@@ -33,11 +33,31 @@ const FilterTemplate = (props) => {
       },
     },
     {
-      title: "Número de acta",
+      title: "Año",
       field: {
         placeholder: "Ingreso valores a filtrar",
         type: "number",
-        id: "numero_acta",
+        id: "anio",
+        icon: <Search />,
+        width: 400,
+      },
+    },
+    {
+      title: "Padre",
+      field: {
+        placeholder: "Ingrese valores a filtrar",
+        type: "text",
+        id: "padre",
+        icon: <Search />,
+        width: 400,
+      },
+    },
+    {
+      title: "Madre",
+      field: {
+        placeholder: "Ingrese valores a filtrar",
+        type: "text",
+        id: "madre",
         icon: <Search />,
         width: 400,
       },
