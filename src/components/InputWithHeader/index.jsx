@@ -12,6 +12,7 @@ function returnComponent(item) {
       placeholder={item.placeholder}
       id={item.id}
       type={item.type ? item.type : "text"}
+      size="small"
       icon={item.icon}
       iconPosition={item.iconPosition}
       value={item.value}
@@ -37,7 +38,7 @@ function returnComponent(item) {
         startIcon={item.icon}
         onClick={item.handleClick}
         fullWidth={true}
-        size={item.size ? item.size : "small"}
+        size={item.size ? item.size : "large"}
         disabled={item.disabled ? item.disabled : false}
       />
     )
@@ -50,7 +51,9 @@ const InputWithHeader = ({ element }) => {
     <Fragment>
       <div className={classes.FlexContainerColumn}>
         <ListItemText>
-          <div className={classes.TextBold}>{element.title}</div>
+          <div className={classes.TextBold}>
+            {element.title} {console.log(element)}
+          </div>
         </ListItemText>
         {returnComponent(element.field)}
       </div>

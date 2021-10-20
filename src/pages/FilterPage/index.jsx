@@ -5,11 +5,13 @@ import FilterTemplate from "templates/FilterTemplate";
 const FilterPage = () => {
   const [chipList, setChipList] = useState([]);
   const [searchBarValue, setSearchBarValue] = useState("");
+  const [rows, setRows] = useState([]);
+  const [dataGrid, setDataGrid] = useState(false);
+
   const searchGeneral = () => {
     console.log(searchBarValue);
   };
   const getFilterPath = () => {
-    console.log("hola");
     const searchBar = `?search=${searchBarValue}`;
     const filtradoTipo = chipList.filter((data) => {
       return data.key !== "tipo";
@@ -28,7 +30,9 @@ const FilterPage = () => {
         ? `?${filterOptions}`
         : "";
     alert("La busqueda será: " + url);
+    setDataGrid(true);
   };
+
   return (
     <FilterTemplate
       chip={[chipList, setChipList]}
@@ -39,6 +43,8 @@ const FilterPage = () => {
         getFilterPath();
       }}
       handleOnChangeSearch={(event) => setSearchBarValue(event.target.value)}
+      rows={rows}
+      dataGrid={dataGrid}
     />
   );
 };

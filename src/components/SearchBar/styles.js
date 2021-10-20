@@ -3,10 +3,11 @@ import { makeStyles } from "@material-ui/styles";
 export const useStyles = makeStyles((theme) => ({
   FlexContainer: {
     display: "flex",
-    width: "80vw",
+    // width: "80vw",
   },
   FlexElementContainer: {
     display: "flex",
+    alignItems: "flex-end",
   },
   Grow: {
     flexGrow: "1",

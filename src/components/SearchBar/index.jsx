@@ -6,6 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { useStyles } from "./styles";
+import { Button } from "@mui/material";
 
 const SearchBar = ({
   showSearchField = true,
@@ -37,8 +38,9 @@ const SearchBar = ({
             <InputWithHeader
               element={{
                 field: {
+                  title: "Ingresar Apellido",
                   component: "TextField",
-                  label: "",
+                  label: "Ingresar apellido",
                   placeholder: placeholderSearch,
                   id: "search-field",
                   icon: <SearchIcon />,
@@ -49,30 +51,36 @@ const SearchBar = ({
                   onChange: (event) => handleOnChangeSearch(event),
                   value: valueSearch,
                 },
+                title: "Ingresar Apellido",
               }}
             />
           </div>
         )}
         {showFilterButton && (
           <div
-            className={clsx(classes.FlexElementContainer, {
-              [classes.GrowMedium]: aditionalButtons.length <= 1,
-            })}
+            className={`${classes.FlexElementContainer} ${classes.GrowMedium}`}
           >
-            <div className={`${classes.FlexElementContainer} `}>
-              <InputWithHeader
+            {/* <InputWithHeader
                 element={{
                   field: {
+                    title: "Filtrar",
                     component: "IconButton",
                     label: "Filtrar",
                     variant: "outlined",
                     color: "secondary",
-                    icon: <FilterListIcon />,
+                    icon: <Button />,
                     handleClick: handleFilterButton,
                   },
+                  title: "Buscar",
                 }}
-              />
-            </div>
+              /> */}
+            <Button
+              onClick={handleFilterButton}
+              variant="outlined"
+              size="medium"
+            >
+              Buscar
+            </Button>
           </div>
         )}
 

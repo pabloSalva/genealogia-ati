@@ -23,10 +23,23 @@ export const useStyles = makeStyles((theme) => ({
   },
   titulo: {
     paddingBottom: 24,
+    paddingTop: 32,
+    paddingLeft: 32,
   },
   mensaje: {
     fontSize: 18,
     marginTop: 30,
+  },
+  filterBar: {
+    // maxWidth: "100%",
+    // maxHeight: 100,
+    paddingTop: 32,
+    paddingLeft: 32,
+  },
+  dataGrid: {
+    paddingTop: 32,
+    paddingLeft: 32,
+    paddingRight: 32,
   },
 }));
 
